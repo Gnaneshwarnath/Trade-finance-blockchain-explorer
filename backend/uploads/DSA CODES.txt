@@ -1,0 +1,406 @@
+DSA CODES
+
+Linear Search
+arr = [10, 20, 30, 40, 50]
+key = 30
+
+for i in range(len(arr)):
+    if arr[i] == key:
+        print("Element found at index", i)
+        break
+else:
+    print("Element not found")
+2️⃣ Binary Search
+arr = [10, 20, 30, 40, 50]
+key = 40
+
+low = 0
+high = len(arr) - 1
+
+while low <= high:
+    mid = (low + high) // 2
+
+    if arr[mid] == key:
+        print("Element found at index", mid)
+        break
+    elif arr[mid] < key:
+        low = mid + 1
+    else:
+        high = mid - 1
+3️⃣ Bubble Sort
+arr = [5, 3, 8, 4, 2]
+
+n = len(arr)
+
+for i in range(n):
+    for j in range(0, n-i-1):
+        if arr[j] > arr[j+1]:
+            arr[j], arr[j+1] = arr[j+1], arr[j]
+
+print(arr)
+4️⃣ Selection Sort
+arr = [64, 25, 12, 22, 11]
+
+for i in range(len(arr)):
+    min_index = i
+
+    for j in range(i+1, len(arr)):
+        if arr[j] < arr[min_index]:
+            min_index = j
+
+    arr[i], arr[min_index] = arr[min_index], arr[i]
+
+print(arr)
+5️⃣ Insertion Sort
+arr = [12, 11, 13, 5, 6]
+
+for i in range(1, len(arr)):
+    key = arr[i]
+    j = i - 1
+
+    while j >= 0 and arr[j] > key:
+        arr[j + 1] = arr[j]
+        j -= 1
+
+    arr[j + 1] = key
+
+print(arr)
+6️⃣ Stack Implementation (Using List)
+stack = []
+
+stack.append(10)
+stack.append(20)
+stack.append(30)
+
+print("Stack:", stack)
+
+stack.pop()
+
+print("After pop:", stack)
+7️⃣ Queue Implementation
+from collections import deque
+
+queue = deque()
+
+queue.append(10)
+queue.append(20)
+queue.append(30)
+
+print(queue)
+
+queue.popleft()
+
+print(queue)
+8️⃣ Fibonacci (Recursion)
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+
+print(fib(6))
+9️⃣ Factorial (Recursion)
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n-1)
+
+print(factorial(5))
+🔟 Reverse an Array
+arr = [1,2,3,4,5]
+
+arr.reverse()
+
+print(arr)
+
+
+1️⃣ Linked List
+Node Structure
+
+Each node contains:
+
+data
+
+pointer to next node
+
+Linked List Code
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+
+        temp.next = new_node
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+ll = LinkedList()
+
+ll.insert(10)
+ll.insert(20)
+ll.insert(30)
+
+ll.display()
+Output
+10 -> 20 -> 30 -> None
+2️⃣ Binary Tree
+
+A binary tree is a tree where each node has maximum two children.
+
+Binary Tree Code
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Creating tree
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+Tree Structure
+
+      1
+     / \
+    2   3
+   / \
+  4   5
+3️⃣ Tree Traversal
+Inorder Traversal (Left → Root → Right)
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+
+inorder(root)
+Preorder Traversal (Root → Left → Right)
+def preorder(root):
+    if root:
+        print(root.data)
+        preorder(root.left)
+        preorder(root.right)
+
+preorder(root)
+Postorder Traversal (Left → Right → Root)
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data)
+
+postorder(root)
+Important Linked List Operations
+
+Insert
+
+Delete
+
+Traverse
+
+Search
+
+Important Tree Operations
+
+Insert node
+
+Delete node
+
+Traversal (Inorder, Preorder, Postorder)
+
+Search
+
+✅ These Linked List and Tree codes are very common in interviews (Infosys, Cognizant, Revature).
+
+If you want, I can also give 10 most asked Linked List interview codes like:
+
+Reverse Linked List
+
+Detect Loop in Linked List
+
+Find Middle Node
+
+Merge Two Linked Lists
+
+Binary Search Tree (BST) code
+
+These are much more likely asked in coding rounds.
+
+linked list operations
+
+Here are the main Linked List operations in Python used in Data Structures and Algorithms interviews.
+
+Linked List Operations
+
+Main operations:
+
+Insert
+
+Delete
+
+Traverse (Display)
+
+Search
+
+1️⃣ Create Node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+2️⃣ Create Linked List
+class LinkedList:
+    def __init__(self):
+        self.head = None
+3️⃣ Insert at Beginning
+def insert_begin(self, data):
+    new_node = Node(data)
+    new_node.next = self.head
+    self.head = new_node
+
+Example
+Before: 20 -> 30
+Insert 10
+
+After:
+10 -> 20 -> 30
+
+4️⃣ Insert at End
+def insert_end(self, data):
+    new_node = Node(data)
+
+    if self.head is None:
+        self.head = new_node
+        return
+
+    temp = self.head
+    while temp.next:
+        temp = temp.next
+
+    temp.next = new_node
+5️⃣ Insert at Position
+def insert_pos(self, pos, data):
+    new_node = Node(data)
+
+    temp = self.head
+    for i in range(pos - 1):
+        temp = temp.next
+
+    new_node.next = temp.next
+    temp.next = new_node
+6️⃣ Delete from Beginning
+def delete_begin(self):
+    if self.head is None:
+        return
+
+    self.head = self.head.next
+7️⃣ Delete from End
+def delete_end(self):
+
+    if self.head is None:
+        return
+
+    temp = self.head
+
+    while temp.next.next:
+        temp = temp.next
+
+    temp.next = None
+8️⃣ Delete by Value
+def delete_value(self, key):
+
+    temp = self.head
+
+    if temp and temp.data == key:
+        self.head = temp.next
+        return
+
+    while temp.next:
+        if temp.next.data == key:
+            temp.next = temp.next.next
+            return
+        temp = temp.next
+9️⃣ Traverse (Display Linked List)
+def display(self):
+
+    temp = self.head
+
+    while temp:
+        print(temp.data, end=" -> ")
+        temp = temp.next
+
+    print("None")
+🔟 Search in Linked List
+def search(self, key):
+
+    temp = self.head
+
+    while temp:
+        if temp.data == key:
+            print("Element Found")
+            return
+        temp = temp.next
+
+    print("Element Not Found")
+Example Full Program
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+class LinkedList:
+    def __init__(self):
+        self.head=None
+
+    def insert_end(self,data):
+        new=Node(data)
+
+        if self.head is None:
+            self.head=new
+            return
+
+        temp=self.head
+        while temp.next:
+            temp=temp.next
+
+        temp.next=new
+
+    def display(self):
+        temp=self.head
+        while temp:
+            print(temp.data,end=" -> ")
+            temp=temp.next
+        print("None")
+
+ll=LinkedList()
+
+ll.insert_end(10)
+ll.insert_end(20)
+ll.insert_end(30)
+
+ll.display()
+
+Output
+
+10 -> 20 -> 30 -> None
