@@ -18,7 +18,7 @@ class LedgerOut(BaseModel):
     org_name: str
 
     class Config:
-        orm_mode = True  # <-- THIS IS IMPORTANT
+        from_attributes = True # <-- THIS IS IMPORTANT
 
 @router.post("/", response_model=LedgerOut)
 def add_ledger(entry_in: LedgerCreate, db: Session = Depends(get_db), user: User = Depends(get_current_user)):
